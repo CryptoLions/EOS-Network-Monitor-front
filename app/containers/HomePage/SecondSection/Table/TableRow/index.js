@@ -355,7 +355,7 @@ export default class TableRow extends PureComponent {
           )}
           {/* {24.Blacklist Hash} */}
           {tableColumnState.blackListHash && (
-            <Tdata>
+            <Tdata backgroundColor={backgroundColor}>
               {producer.blackListHash === lastHash ? (
                 <StyledSpan color="#11a827">current</StyledSpan>
               ) : (
