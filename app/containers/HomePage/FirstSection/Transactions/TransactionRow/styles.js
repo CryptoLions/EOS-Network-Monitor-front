@@ -5,6 +5,9 @@ export const RowData = styled.div`
   flex-direction: column;
   padding: 3px 0 3px 10px;
   background-color: ${({ iteration }) => (iteration % 2 ? '' : 'lightgrey')};
+  height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const Link = styled.a`
@@ -20,6 +23,9 @@ export const Link = styled.a`
 
 export const ItemContainer = styled.div`
   display: block;
+  height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const TextSpan = styled.span`
