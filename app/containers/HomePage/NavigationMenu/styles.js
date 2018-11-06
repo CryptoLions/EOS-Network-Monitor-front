@@ -22,10 +22,8 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.div`
-  @media (max-width: 768px) {
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  align-items: center;
 `;
 
 export const NavMenuButton = styled.svg`
@@ -79,6 +77,19 @@ export const LanguageSwitcher = styled.span`
 
   @media (max-width: 768px) {
     border-right-color: white;
+  }
+`;
+
+export const LogoImage = styled.img`
+  height: 50px;
+  width: 50px;
+  margin-right: 15px;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    margin: 10px;
+    height: 40px;
+    width: 40px;
   }
 `;
 
