@@ -8,8 +8,13 @@ export const Container = styled.div`
   display: inherit;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 75vw;
   padding: 20px 0;
+  position: relative;
+
+  @media (max-width: 992px) {
+    width: 85vw;
+  }
 
   @media (max-width: 768px) {
     padding: 0 0 5px 0;
@@ -57,6 +62,23 @@ export const Headlink = link.extend`
     font-size: 17px;
     line-height: normal;
     padding: 5px 0 0 0;
+  }
+`;
+
+export const LanguageSwitcher = styled.span`
+  padding-left: 8px;
+  padding-right: 8px;
+  border-right: 1px solid black;
+  cursor: pointer;
+  &:active {
+    color: blue;
+  }
+  &:last-child {
+    border: 0;
+  }
+
+  @media (max-width: 768px) {
+    border-right-color: white;
   }
 `;
 
@@ -138,5 +160,21 @@ export const Border = styled.span`
 
   @media (max-width: 768px) {
     display: none;
+  }
+`;
+
+export const SwitcherWrapper = styled.div`
+  position: absolute;
+  right: 0;
+  top: 45px;
+
+  @media (max-width: 768px) {
+    display: ${({ isNavMenuActive }) => (isNavMenuActive ? 'flex' : 'none')};
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    color: white;
+    z-index: 3;
+    animation: ${navMenuAppear} 0.3s;
   }
 `;
