@@ -35,17 +35,3 @@ export const FooterSpan = styled.span`
 export const RegularLink = styled.a`
   color: white;
 `;
-
-export const LanguageSwitcher = styled.span`
-  color: white;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-right: 1px solid white;
-  cursor: pointer;
-  &:active {
-    color: blue;
-  }
-  &:last-child {
-    border: 0;
-  }
-`;

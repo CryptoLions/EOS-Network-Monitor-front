@@ -2,12 +2,23 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
+import store from 'store';
 
 // Svg
 import { SvgMenuButton } from './svg';
 
 // Styles
-import { Container, Header, Headlink, BlurBG, NavMenu, Border, BlueLink } from './styles';
+import {
+  Container,
+  Header,
+  Headlink,
+  SwitcherWrapper,
+  LanguageSwitcher,
+  BlurBG,
+  NavMenu,
+  Border,
+  BlueLink,
+} from './styles';
 
 @translate()
 export default class NavigationMenu extends PureComponent {
@@ -32,6 +43,11 @@ export default class NavigationMenu extends PureComponent {
     this.props.toggleModal(modalName, data);
   };
 
+  changeLanguage = (lng, shortLng) => () => {
+    store.set('eosMonitor_currentLanguage', shortLng);
+    this.props.i18n.changeLanguage(lng);
+  };
+
   render() {
     const { isNavMenuActive } = this.state;
     const { t } = this.props;
@@ -41,6 +57,11 @@ export default class NavigationMenu extends PureComponent {
           <SvgMenuButton toggleNavMenuHandler={this.toggleNavMenuHandler} />
           <Headlink href="http://eosnetworkmonitor.io/">{t('i18nNavigationMenu.headLink')}</Headlink>
         </Header>
+        <SwitcherWrapper isNavMenuActive={isNavMenuActive}>
+          <LanguageSwitcher onClick={this.changeLanguage('en-US', 'en')}>En</LanguageSwitcher>
+          <LanguageSwitcher onClick={this.changeLanguage('ru-RU', 'ru')}>Ru</LanguageSwitcher>
+          <LanguageSwitcher onClick={this.changeLanguage('zh-CN', 'zh')}>Cn</LanguageSwitcher>
+        </SwitcherWrapper>
         {isNavMenuActive && <BlurBG onClick={this.toggleNavMenuHandler} />}
         <NavMenu isNavMenuActive={isNavMenuActive}>
           <BlueLink onClick={this.toggleModalHandler('accountInfo', null)}>
@@ -83,4 +104,5 @@ export default class NavigationMenu extends PureComponent {
 NavigationMenu.propTypes = {
   t: PropTypes.func,
   toggleModal: PropTypes.func,
+  i18n: PropTypes.func,
 };
