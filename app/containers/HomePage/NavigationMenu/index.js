@@ -12,6 +12,7 @@ import {
   Container,
   Header,
   Headlink,
+  LogoImage,
   SwitcherWrapper,
   LanguageSwitcher,
   BlurBG,
@@ -20,10 +21,15 @@ import {
   BlueLink,
 } from './styles';
 
+// Images
+import logoGif from '../../../assets/images/big.gif';
+import logoPreview from '../../../assets/images/preview.png';
+
 @translate()
 export default class NavigationMenu extends PureComponent {
   state = {
     isNavMenuActive: false,
+    isLogoActive: false,
   };
 
   componentDidUpdate() {
@@ -48,13 +54,24 @@ export default class NavigationMenu extends PureComponent {
     this.props.i18n.changeLanguage(lng);
   };
 
+  toggleLogoHandler = () => {
+    this.setState(prevState => ({
+      isLogoActive: !prevState.isLogoActive,
+    }));
+  };
+
   render() {
-    const { isNavMenuActive } = this.state;
+    const { isNavMenuActive, isLogoActive } = this.state;
     const { t } = this.props;
     return (
       <Container>
         <Header>
           <SvgMenuButton toggleNavMenuHandler={this.toggleNavMenuHandler} />
+          {isLogoActive ? (
+            <LogoImage src={logoGif} alt="Logo" onClick={this.toggleLogoHandler} />
+          ) : (
+            <LogoImage src={logoPreview} alt="Logo" onClick={this.toggleLogoHandler} />
+          )}
           <Headlink href="http://eosnetworkmonitor.io/">{t('i18nNavigationMenu.headLink')}</Headlink>
         </Header>
         <SwitcherWrapper isNavMenuActive={isNavMenuActive}>
