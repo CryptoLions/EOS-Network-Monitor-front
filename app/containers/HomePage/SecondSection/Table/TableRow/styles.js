@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Flag from 'react-world-flags';
 
 export const Trow = styled.tr`
   padding: 0px 5px;
@@ -19,6 +20,12 @@ export const Tdata = Cell.extend`
 `;
 
 // Cell
+export const LocationCell = Cell.extend`
+  width: 165px;
+  min-width: 165px;
+  background: ${({ backgroundColor }) => backgroundColor};
+`;
+
 export const VotesCell = Cell.extend`
   width: 135px;
   min-width: 135px;
@@ -111,6 +118,12 @@ export const TimeAgoBlock = styled.div`
 `;
 
 // Others
+export const StyledFlag = styled(Flag)`
+  margin-right: 10px;
+  width: 26.6px;
+  max-height: 20px;
+`;
+
 export const NameBlock = styled.div`
   display: flex;
 `;
@@ -122,6 +135,11 @@ export const NameWrapper = styled.div`
 export const LabelWrapper = styled.div`
   padding-left: 10px;
   width: 20px;
+`;
+
+export const LocationWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const Index = styled.div`

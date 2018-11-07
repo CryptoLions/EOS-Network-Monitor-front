@@ -22,6 +22,7 @@ import {
   Trow,
   Tdata,
   // cells
+  LocationCell,
   VotesCell,
   MissedBlocksCell,
   MissedBlocksAllTimeCell,
@@ -36,9 +37,11 @@ import {
   VersionCell,
   AddressCell,
   // Others
+  StyledFlag,
   NameBlock,
   NameWrapper,
   LabelWrapper,
+  LocationWrapper,
   Index,
   TextSpan,
   TextLink,
@@ -188,6 +191,7 @@ export default class TableRow extends PureComponent {
     } = this.props;
     const node = producer.nodes && producer.nodes.length ? producer.nodes[0] : {};
     const { nodes } = producer;
+    const countryCode = node.location ? node.location.split(',')[0] : null;
 
     const producerUrl = this.getProducerUrl();
     const p2pPort = this.extractCorrectP2pPort(nodes);
@@ -277,7 +281,14 @@ export default class TableRow extends PureComponent {
           {/* {9.P2P} */}
           {tableColumnState.p2p && <Tdata backgroundColor={backgroundColor}>{p2pPort}</Tdata>}
           {/* {10.Location} */}
-          {tableColumnState.location && <Tdata backgroundColor={backgroundColor}>{node.location}</Tdata>}
+          {tableColumnState.location && (
+            <LocationCell backgroundColor={backgroundColor}>
+              <LocationWrapper>
+                {countryCode && <StyledFlag code={countryCode} />}
+                {node.location}
+              </LocationWrapper>
+            </LocationCell>
+          )}
           {/* {11.# produced} */}
           {tableColumnState.numberProduced && <Tdata backgroundColor={backgroundColor}>{producer.produced}</Tdata>}
           {/* {12.# TXs} */}

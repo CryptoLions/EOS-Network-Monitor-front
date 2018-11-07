@@ -5848,6 +5848,13 @@ react-transition-group@^2.2.1:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
+react-world-flags@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/react-world-flags/-/react-world-flags-1.2.4.tgz#6cbb7d4d48d7790375d07414fd527ce5a5708f5b"
+  dependencies:
+    svg-country-flags "^1.2.3"
+    world-countries "^2.0.0"
+
 react@16.4.2, react@>=16.0.0, "react@^15.6.2 || ^16.0":
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.2.tgz#2cd90154e3a9d9dd8da2991149fdca3c260e129f"
@@ -6662,6 +6669,10 @@ supports-color@^5.3.0, supports-color@^5.4.0:
   dependencies:
     has-flag "^3.0.0"
 
+svg-country-flags@^1.2.3:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/svg-country-flags/-/svg-country-flags-1.2.6.tgz#d979895dc50245e025e1298af4e4472565645207"
+
 svgo@^0.7.0:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/svgo/-/svgo-0.7.2.tgz#9f5772413952135c6fefbf40afe6a4faa88b4bb5"
@@ -7196,6 +7207,10 @@ worker-farm@^1.5.2:
   resolved "https://registry.yarnpkg.com/worker-farm/-/worker-farm-1.6.0.tgz#aecc405976fab5a95526180846f0dba288f3a4a0"
   dependencies:
     errno "~0.1.7"
+
+world-countries@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/world-countries/-/world-countries-2.0.0.tgz#a20198c438e2f78aca040d68dedeea0bc26adc6e"
 
 wrap-ansi@^2.0.0:
   version "2.1.0"
