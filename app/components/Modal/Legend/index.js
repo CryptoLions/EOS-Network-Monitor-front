@@ -26,6 +26,8 @@ import {
   Bold,
   GreyText,
   Yellow,
+  Orange,
+  Red,
 } from './styles';
 
 @translate()
@@ -66,6 +68,16 @@ export default class Legend extends PureComponent {
               <Yellow />
               <ColorDescDash>-</ColorDescDash>
               {t('i18nModal.i18nLegend.halfOrMore')}.
+            </ColorDiv>
+            <ColorDiv>
+              <Orange />
+              <ColorDescDash>-</ColorDescDash>
+              {t('i18nModal.i18nLegend.zeroOfpublic')}.
+            </ColorDiv>
+            <ColorDiv>
+              <Red />
+              <ColorDescDash>-</ColorDescDash>
+              {t('i18nModal.i18nLegend.notProducing')}.
             </ColorDiv>
             <ColorDesc>{t('i18nModal.i18nLegend.versionInformation')}</ColorDesc>
             <ColorDiv>
