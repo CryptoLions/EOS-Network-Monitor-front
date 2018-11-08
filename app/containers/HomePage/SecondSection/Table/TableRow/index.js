@@ -222,7 +222,7 @@ export default class TableRow extends PureComponent {
       if (producer.responseIsBad) backgroundColorFixedCell = 'rgb(238, 118, 0)';
       if (producer.missedProducing) backgroundColorFixedCell = 'rgb(255, 4, 4);';
     }
-    // console.log(producer.bpData, producer.bpData.org.branding.logo_256);
+
     return (
       <Fragment>
         <Trow>
