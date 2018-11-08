@@ -40,6 +40,8 @@ import {
   StyledFlag,
   NameBlock,
   NameWrapper,
+  BpImage,
+  ImageBackup,
   LabelWrapper,
   LocationWrapper,
   Index,
@@ -220,7 +222,7 @@ export default class TableRow extends PureComponent {
       if (producer.responseIsBad) backgroundColorFixedCell = 'rgb(238, 118, 0)';
       if (producer.missedProducing) backgroundColorFixedCell = 'rgb(255, 4, 4);';
     }
-
+    // console.log(producer.bpData, producer.bpData.org.branding.logo_256);
     return (
       <Fragment>
         <Trow>
@@ -235,6 +237,11 @@ export default class TableRow extends PureComponent {
               </LabelWrapper>
               <Index>{producer.index + 1}</Index>
               <NameWrapper>
+                <ImageBackup>
+                  {producer.bpData &&
+                    producer.bpData.org &&
+                    producer.bpData.org.branding && <BpImage src={producer.bpData.org.branding.logo_256} />}
+                </ImageBackup>
                 <TextLink onClick={() => toggleModal('accountInfo', producer.name)}>{producer.name}</TextLink>
                 <ExternalLink link={producerUrl} />
               </NameWrapper>
