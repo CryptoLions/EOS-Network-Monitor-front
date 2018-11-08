@@ -122,6 +122,8 @@ export default Object.freeze({
         colorsLegend: '颜色说明',
         producingRightNow: '正在生产',
         halfOrMore: 'Half or more public endpoints do not respond',
+        zeroOfpublic: '0 of public endpoints is working',
+        notProducing: 'Not producing blocks',
         versionInformation: `版本信息是从公共节点查询获得的。出块节点通常是隐藏的。“不显示版本”的公共节点可能有合理的理由，比如回避已知的漏洞，但这些都很少见。`,
         unsynced: '未同步',
         thisDoesNot: `这并不一定意味着有分叉或者不同。它可能是节点重新同步，很快就会同步完成`,

@@ -76,6 +76,10 @@ export const Yellow = Color.extend`
   background-color: rgba(255, 255, 155, 0.7);
 `;
 
+export const Orange = Color.extend`
+  background-color: rgba(238, 118, 0, 0.7);
+`;
+
 export const Purple = Color.extend`
   background-color: rgb(159, 100, 227);
 `;

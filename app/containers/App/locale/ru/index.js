@@ -120,8 +120,10 @@ export default Object.freeze({
         aps: ['APS', 'Действий в транзакциях в секунду'],
         // Colors legend block
         colorsLegend: 'Цвет Обозначений',
-        producingRightNow: 'сейчас продюсирует',
+        producingRightNow: 'Cейчас продюсирует',
         halfOrMore: 'Half or more public endpoints do not respond',
+        zeroOfpublic: '0 of public endpoints is working',
+        notProducing: 'Not producing blocks',
         versionInformation: `Информация о версии получается от запросов от публичных нод. Ноды продюсирующие блоки, как правило, скрыты. Могут быть законные основания для "официальных версий" публичных нод, такие как обход известных багов, но это редкость`,
         unsynced: 'Не синхронизирован',
         thisDoesNot: `Это НЕ означает форк или разницу в консенсусе. Может быть, что узел ресинхронизировался и в ближайшее время снова синхронизируется`,

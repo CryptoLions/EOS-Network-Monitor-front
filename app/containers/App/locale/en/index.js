@@ -120,8 +120,10 @@ export default Object.freeze({
         aps: ['APS', 'Actions in transaction per second'],
         // Colors legend block
         colorsLegend: 'COLORS LEGEND',
-        producingRightNow: 'producing right now',
+        producingRightNow: 'Producing right now',
         halfOrMore: 'Half or more public endpoints do not respond',
+        zeroOfpublic: '0 of public endpoints is working',
+        notProducing: 'Not producing blocks',
         versionInformation: `Version information is obtained from querying public nodes. Block producing nodes are usually hidden. There may be legitimate reasons for "off version" public nodes, like sidestepping a known bug, but these are rare`,
         unsynced: 'Unsynced',
         thisDoesNot: `This does NOT necessarily mean there's a fork or a difference in consensus. It could be that the node is resynchronizing and will soon by synced again`,
