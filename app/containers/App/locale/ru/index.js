@@ -27,7 +27,7 @@ export default Object.freeze({
         historyLink: 'История',
         // <Main />
         balance: 'Баланс',
-        tokens: 'Tokens',
+        tokens: 'Токены',
         created: 'Создан',
         lastCodeUpdate: 'Последнее обновление кода',
         activeKey: 'Active Key',
@@ -121,9 +121,9 @@ export default Object.freeze({
         // Colors legend block
         colorsLegend: 'Цвет Обозначений',
         producingRightNow: 'Cейчас продюсирует',
-        halfOrMore: 'Half or more public endpoints do not respond',
-        zeroOfpublic: '0 of public endpoints is working',
-        notProducing: 'Not producing blocks',
+        halfOrMore: 'Половина или более публ. конечных точек не отвечают',
+        zeroOfpublic: '0 рабочих публ. конечных точек',
+        notProducing: 'Не производит блоки',
         versionInformation: `Информация о версии получается от запросов от публичных нод. Ноды продюсирующие блоки, как правило, скрыты. Могут быть законные основания для "официальных версий" публичных нод, такие как обход известных багов, но это редкость`,
         unsynced: 'Не синхронизирован',
         thisDoesNot: `Это НЕ означает форк или разницу в консенсусе. Может быть, что узел ресинхронизировался и в ближайшее время снова синхронизируется`,
@@ -170,11 +170,11 @@ export default Object.freeze({
       },
       // <ErrorMessage />
       i18nErrorMessage: {
-        title: 'Error message',
+        title: 'Сообщение об ошибке',
       },
       // <RamPrice />
       i18nRamPrice: {
-        title: 'EOS RAM price',
+        title: 'Цена EOS RAM',
       },
       // <LiveTps />
       i18nLiveTps: {
@@ -198,7 +198,7 @@ export default Object.freeze({
         tps: 'TPS Текущие/Рекорд',
         aps: 'APS Текущие/Рекорд',
         connectedUsers: 'Подключенных Пользователей',
-        ramUsed: 'RAM used / in chain',
+        ramUsed: 'используемая RAM / в чейне',
         totalUnpaidBlocks: 'Неоплаченных блоков',
         eosioRamFee: 'Eosio ram fee',
         eosioSaving: 'Eosio saving',
@@ -236,14 +236,14 @@ export default Object.freeze({
         votes: 'Голосов',
         expectedIncome: 'Ожидаемый доход',
         actualIncome: 'Actual income',
-        missedBlocksAll: 'Missed blocks (all time)',
-        missedBlocksRound: 'Missed blocks (last round)',
-        missedBlocksDay: 'Missed blocks (last 24 hours)',
-        voteRewards: 'Vote rewards',
-        blockRewards: 'Block rewards',
-        totalUnpaidRewards: 'Total unpaid rewards',
-        publicEndpoints: 'Public endpoints',
-        blackListHash: 'Blacklist Hash',
+        missedBlocksAll: 'Пропущенных блоков (за все время)',
+        missedBlocksRound: 'Пропущенных блоков (последний раунд)',
+        missedBlocksDay: 'Пропущенных блоков (за последние 24 ч.)',
+        voteRewards: 'Награда за голосование',
+        blockRewards: 'Награда за блоки',
+        totalUnpaidRewards: 'Всего неоплаченных вознаграждений',
+        publicEndpoints: 'Публичные конечные точки',
+        blackListHash: 'Хэш блэклиста',
       },
       // <TableColumnMenu />
       i18nTableColumnMenu: {
