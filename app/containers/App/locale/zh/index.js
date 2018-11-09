@@ -27,7 +27,7 @@ export default Object.freeze({
         historyLink: '历史',
         // <Main />
         balance: '余额',
-        tokens: 'Tokens',
+        tokens: '令牌',
         created: '创建',
         lastCodeUpdate: '最后代码更新',
         activeKey: 'Active Key',
@@ -121,9 +121,9 @@ export default Object.freeze({
         // Colors legend block
         colorsLegend: '颜色说明',
         producingRightNow: '正在生产',
-        halfOrMore: 'Half or more public endpoints do not respond',
-        zeroOfpublic: '0 of public endpoints is working',
-        notProducing: 'Not producing blocks',
+        halfOrMore: '半或更多公共端点无响应',
+        zeroOfpublic: '0个公共端点正在运行',
+        notProducing: '不生产块',
         versionInformation: `版本信息是从公共节点查询获得的。出块节点通常是隐藏的。“不显示版本”的公共节点可能有合理的理由，比如回避已知的漏洞，但这些都很少见。`,
         unsynced: '未同步',
         thisDoesNot: `这并不一定意味着有分叉或者不同。它可能是节点重新同步，很快就会同步完成`,
@@ -170,15 +170,15 @@ export default Object.freeze({
       },
       // <ErrorMessage />
       i18nErrorMessage: {
-        title: 'Error message',
+        title: '错误信息',
       },
       // <RamPrice />
       i18nRamPrice: {
-        title: 'EOS RAM price',
+        title: 'EOS RAM 价格',
       },
       // <LiveTps />
       i18nLiveTps: {
-        title: 'Live TPS',
+        title: 'TPS实况',
       },
     },
     // <FirstSection />
@@ -198,9 +198,9 @@ export default Object.freeze({
         tps: 'TPS 当前/全部',
         aps: 'APS 当前/全部',
         connectedUsers: '已连接用户数',
-        ramUsed: 'RAM used / in chain',
+        ramUsed: '链中RAM（内存）已占用/未占用',
         totalUnpaidBlocks: '无偿块',
-        eosioRamFee: 'Eosio ram fee',
+        eosioRamFee: 'Eosio ram 费用',
         eosioSaving: 'Eosio saving',
       },
       // <Transactions />
@@ -236,14 +236,14 @@ export default Object.freeze({
         votes: '票',
         expectedIncome: '预期收入',
         actualIncome: 'Actual income',
-        missedBlocksAll: 'Missed blocks (all time)',
-        missedBlocksRound: 'Missed blocks (last round)',
-        missedBlocksDay: 'Missed blocks (last 24 hours)',
-        voteRewards: 'Vote rewards',
-        blockRewards: 'Block rewards',
-        totalUnpaidRewards: 'Total unpaid rewards',
-        publicEndpoints: 'Public endpoints',
-        blackListHash: 'Blacklist Hash',
+        missedBlocksAll: '丢失区块（所有时间）',
+        missedBlocksRound: '丢失区块（上一轮）',
+        missedBlocksDay: '丢失区块（最近24小时）',
+        voteRewards: '投票奖励',
+        blockRewards: '区块奖励',
+        totalUnpaidRewards: '总的未支付奖励',
+        publicEndpoints: '公共端点',
+        blackListHash: '哈希黑名单',
       },
       // <TableColumnMenu />
       i18nTableColumnMenu: {
