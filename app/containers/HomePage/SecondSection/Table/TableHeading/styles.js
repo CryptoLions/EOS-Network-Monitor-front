@@ -28,7 +28,7 @@ export const FixedWrapper = styled.div`
 `;
 
 export const FixedText = styled.span`
-  padding-left: 90px;
+  padding-left: 110px;
 `;
 
 export const ColumnMenuTdata = styled.td`

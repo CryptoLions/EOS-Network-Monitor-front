@@ -40,6 +40,8 @@ import {
   StyledFlag,
   NameBlock,
   NameWrapper,
+  BpImage,
+  ImageBackup,
   LabelWrapper,
   LocationWrapper,
   Index,
@@ -235,6 +237,11 @@ export default class TableRow extends PureComponent {
               </LabelWrapper>
               <Index>{producer.index + 1}</Index>
               <NameWrapper>
+                <ImageBackup>
+                  {producer.bpData &&
+                    producer.bpData.org &&
+                    producer.bpData.org.branding && <BpImage src={producer.bpData.org.branding.logo_256} />}
+                </ImageBackup>
                 <TextLink onClick={() => toggleModal('accountInfo', producer.name)}>{producer.name}</TextLink>
                 <ExternalLink link={producerUrl} />
               </NameWrapper>

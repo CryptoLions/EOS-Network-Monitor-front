@@ -51,8 +51,8 @@ export const OrgNameCell = Cell.extend`
 `;
 
 export const NameCell = Cell.extend`
-  width: 200px;
-  min-width: 200px;
+  width: 220px;
+  min-width: 220px;
   position: sticky;
   left: 0;
   top: 0;
@@ -126,10 +126,24 @@ export const StyledFlag = styled(Flag)`
 
 export const NameBlock = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 export const NameWrapper = styled.div`
+  display: flex;
+  align-items: center;
   margin-left: 10px;
+`;
+
+export const BpImage = styled.img`
+  height: 25px;
+  width: 25px;
+`;
+
+export const ImageBackup = styled.div`
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
 `;
 
 export const LabelWrapper = styled.div`
