@@ -45,6 +45,7 @@ export default class DetailsRow extends PureComponent {
   render() {
     const { colsNumber, isPingUptated, producer, toggleModal, producerUrl, address, p2pPort } = this.props;
     const node = producer.nodes && producer.nodes.length ? producer.nodes[0] : {};
+    const endpoint = producer.endpoints && producer.endpoints.length ? producer.endpoints[0] : {};
 
     return (
       <Trow>
@@ -107,20 +108,10 @@ export default class DetailsRow extends PureComponent {
                 P2P:
                 <BoldText>{p2pPort}</BoldText>
               </DetailsListItem>
-              {producer.responseIsBad && (
-                <DetailsListItem>
-                  <TextLink
-                    onClick={() =>
-                      toggleModal('errorMessage', {
-                        errorMessage: producer.errorMessage,
-                        statusCode: producer.statusCode,
-                      })
-                    }
-                  >
-                    <Bold>Error message & status code</Bold>
-                  </TextLink>
-                </DetailsListItem>
-              )}
+              <DetailsListItem>
+                Server version string:
+                <BoldText>{endpoint.server_version_string ? endpoint.server_version_string : '--'}</BoldText>
+              </DetailsListItem>
             </DetailsList>
             <DetailsList>
               <DetailsListItem>
@@ -150,6 +141,20 @@ export default class DetailsRow extends PureComponent {
                   <DetailsTextSpan>{`${formatNumber(producer.votesPercentage)}%`}</DetailsTextSpan>
                 </BoldText>
               </DetailsListItem>
+              {producer.responseIsBad && (
+                <DetailsListItem>
+                  <TextLink
+                    onClick={() =>
+                      toggleModal('errorMessage', {
+                        errorMessage: producer.errorMessage,
+                        statusCode: producer.statusCode,
+                      })
+                    }
+                  >
+                    <Bold>Error message & status code</Bold>
+                  </TextLink>
+                </DetailsListItem>
+              )}
             </DetailsList>
             <MapWrapper>
               {node.location && (
