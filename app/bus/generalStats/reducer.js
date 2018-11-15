@@ -18,6 +18,7 @@ const initialState = {
     eosioSaving: undefined,
   },
   blockChart: [],
+  unregisteredBps: [],
   connectedUsers: 0,
 };
 
@@ -67,6 +68,12 @@ export const generalStatsReducer = (state = initialState, { type, payload }) => 
       return {
         ...state,
         blockChart: payload,
+      };
+
+    case types.UNREGISTERED_BPS_UPDATE:
+      return {
+        ...state,
+        unregisteredBps: payload,
       };
 
     case types.CONNECTED_USERS_UPDATE:

@@ -56,6 +56,11 @@ class SocketClient {
     );
 
     this.socket.on(
+      'unregistereds',
+      throttle(data => this.dispatch(generalStatsActions.unregisteredBpsUpdate(data)), THROTTLE_TIMEOUT)
+    );
+
+    this.socket.on(
       'blockupdate',
       throttle(data => this.dispatch(generalStatsActions.tpsApsStatsUpdate(data)), THROTTLE_TIMEOUT)
     );

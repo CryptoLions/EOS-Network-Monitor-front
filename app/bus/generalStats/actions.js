@@ -21,6 +21,11 @@ export const generalStatsActions = Object.freeze({
     payload: data,
   }),
 
+  unregisteredBpsUpdate: data => ({
+    type: types.UNREGISTERED_BPS_UPDATE,
+    payload: data,
+  }),
+
   connectedUsersUpdate: data => ({
     type: types.CONNECTED_USERS_UPDATE,
     payload: data,

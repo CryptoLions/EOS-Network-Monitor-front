@@ -12,5 +12,7 @@ export const selectAdditionalInfoStats = () => createSelector(selectGeneralStats
 
 export const selectBlockChart = () => createSelector(selectGeneralStats(), data => data.blockChart);
 
+export const selectUnregisteredBps = () => createSelector(selectGeneralStats(), data => data.unregisteredBps);
+
 export const selectHeadBlockNum = () =>
   createSelector(selectGeneralStats(), ({ lastBlockStats }) => lastBlockStats.head_block_num);
