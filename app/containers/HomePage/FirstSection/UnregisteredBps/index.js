@@ -30,7 +30,7 @@ export default class UnregisteredBps extends PureComponent {
             </TableHead>
             <tbody>
               {unregisteredBps.map(bp => (
-                <TableRow blockProducer={bp} />
+                <TableRow blockProducer={bp} key={bp.name} />
               ))}
             </tbody>
           </table>

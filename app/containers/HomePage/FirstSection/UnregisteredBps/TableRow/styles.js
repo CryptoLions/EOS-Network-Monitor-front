@@ -13,5 +13,5 @@ export const Cell = styled.td`
 `;
 
 export const DateCell = Cell.extend`
-  width: 150px;
+  width: 130px;
 `;
