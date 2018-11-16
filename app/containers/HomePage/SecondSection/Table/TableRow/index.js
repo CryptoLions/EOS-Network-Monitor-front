@@ -46,6 +46,7 @@ import {
   LocationWrapper,
   Index,
   TextSpan,
+  ReregisteredSpan,
   TextLink,
   TimeAgoBlock,
 } from './styles';
@@ -190,6 +191,7 @@ export default class TableRow extends PureComponent {
       colsNumber,
       isTableScrolled,
       lastHash,
+      reregistered,
     } = this.props;
     const node = producer.nodes && producer.nodes.length ? producer.nodes[0] : {};
     const { nodes } = producer;
@@ -205,7 +207,7 @@ export default class TableRow extends PureComponent {
 
     let backgroundColor = 'rgba(255, 255, 255, 0.7)';
     if (producer.isCurrentNode) backgroundColor = 'rgba(17, 168, 39, 0.7)';
-    if (!producer.isNode && index < 61) backgroundColor = 'rgb(211, 211, 211)';
+    if ((!producer.isNode && index < 61) || reregistered) backgroundColor = 'rgb(211, 211, 211)';
     if (mostEndpointsAreDown) backgroundColor = 'rgba(255, 255, 155, 0.7)';
     if (producer.isUnsynced) backgroundColor = 'rgb(159, 100, 227)';
     if (producer.responseIsBad) backgroundColor = 'rgba(238, 118, 0, 0.7)';
@@ -216,11 +218,11 @@ export default class TableRow extends PureComponent {
     if (isTableScrolled) {
       backgroundColorFixedCell = '#fff';
       if (producer.isCurrentNode) backgroundColorFixedCell = 'rgb(17, 168, 39)';
-      if (!producer.isNode && index < 61) backgroundColorFixedCell = 'rgb(211, 211, 211)';
+      if ((!producer.isNode && index < 61) || reregistered) backgroundColorFixedCell = 'rgb(211, 211, 211)';
       if (mostEndpointsAreDown) backgroundColorFixedCell = 'rgb(255, 255, 155)';
       if (producer.isUnsynced) backgroundColorFixedCell = 'rgb(159, 100, 227)';
       if (producer.responseIsBad) backgroundColorFixedCell = 'rgb(238, 118, 0)';
-      if (producer.missedProducing) backgroundColorFixedCell = 'rgb(255, 4, 4);';
+      if (producer.missedProducing) backgroundColorFixedCell = 'rgb(255, 4, 4)';
     }
 
     return (
@@ -244,6 +246,7 @@ export default class TableRow extends PureComponent {
                 </ImageBackup>
                 <TextLink onClick={() => toggleModal('accountInfo', producer.name)}>{producer.name}</TextLink>
                 <ExternalLink link={producerUrl} />
+                {reregistered && <ReregisteredSpan>re-registered</ReregisteredSpan>}
               </NameWrapper>
             </NameBlock>
           </NameCell>
@@ -410,6 +413,7 @@ TableRow.propTypes = {
   toggleProducerSelection: PropTypes.func,
   isNodeChecked: PropTypes.bool,
   isTableScrolled: PropTypes.bool,
+  reregistered: PropTypes.bool,
   colsNumber: PropTypes.number,
   lastHash: PropTypes.string,
 };
