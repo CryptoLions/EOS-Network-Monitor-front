@@ -66,7 +66,7 @@ export const Headlink = link.extend`
 export const LanguageSwitcher = styled.span`
   padding-left: 8px;
   padding-right: 8px;
-  border-right: 1px solid black;
+  border-right: 1px solid rgba(0, 128, 0, 0.7);
   cursor: pointer;
   &:active {
     color: blue;
@@ -83,8 +83,8 @@ export const LanguageSwitcher = styled.span`
 export const LogoImage = styled.img`
   height: 50px;
   width: 50px;
-  margin-right: 15px;
-  cursor: pointer;
+  margin-right: 5px;
+  // cursor: pointer;
 
   @media (max-width: 768px) {
     margin: 10px;
@@ -176,6 +176,8 @@ export const Border = styled.span`
 
 export const SwitcherWrapper = styled.div`
   position: absolute;
+  color: rgba(0, 128, 0, 0.7);
+  font-weight: 500;
   right: 0;
   top: 45px;
 

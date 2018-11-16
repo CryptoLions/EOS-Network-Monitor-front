@@ -22,8 +22,8 @@ import {
 } from './styles';
 
 // Images
-import logoGif from '../../../assets/images/big.gif';
-import logoPreview from '../../../assets/images/preview.png';
+// import logoGif from '../../../assets/images/big.gif';
+import logo from '../../../assets/images/logo.png';
 
 @translate()
 export default class NavigationMenu extends PureComponent {
@@ -61,17 +61,18 @@ export default class NavigationMenu extends PureComponent {
   };
 
   render() {
-    const { isNavMenuActive, isLogoActive } = this.state;
+    const { isNavMenuActive } = this.state;
     const { t } = this.props;
     return (
       <Container>
         <Header>
           <SvgMenuButton toggleNavMenuHandler={this.toggleNavMenuHandler} />
-          {isLogoActive ? (
+          {/* {isLogoActive ? (
             <LogoImage src={logoGif} alt="Logo" onClick={this.toggleLogoHandler} />
           ) : (
-            <LogoImage src={logoPreview} alt="Logo" onClick={this.toggleLogoHandler} />
-          )}
+            <LogoImage src={logo} alt="Logo" onClick={this.toggleLogoHandler} />
+          )} */}
+          <LogoImage src={logo} alt="Logo" />
           <Headlink href="http://eosnetworkmonitor.io/">{t('i18nNavigationMenu.headLink')}</Headlink>
         </Header>
         <SwitcherWrapper isNavMenuActive={isNavMenuActive}>
