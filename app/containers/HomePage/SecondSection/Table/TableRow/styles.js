@@ -163,9 +163,7 @@ export const Index = styled.div`
 `;
 
 export const TextSpan = styled.span`
-  position: relative;
-  bottom: 6px;
-  font-size: 11px;
+  font-size: 10px;
   color: #84878b;
 `;
 
