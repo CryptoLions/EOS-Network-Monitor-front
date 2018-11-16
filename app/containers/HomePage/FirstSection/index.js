@@ -8,13 +8,14 @@ import { createStructuredSelector } from 'reselect';
 // Components
 import CurrentBlockInfo from './CurrentBlockInfo';
 import GeneralInfo from './GeneralInfo';
+import UnregisteredBps from './UnregisteredBps';
 import Transactions from './Transactions';
 
 // Actions
 import { uiActions } from '../../../bus/ui/actions';
 
 // Selectors
-import { selectLastBlockStats } from '../../../bus/generalStats/selectors';
+import { selectLastBlockStats, selectUnregisteredBps } from '../../../bus/generalStats/selectors';
 import { selectTransactionsList, selectTransactionsInfo } from '../../../bus/transactions/selectors';
 
 // Styles
@@ -23,6 +24,7 @@ import { SectionOne } from './styles';
 const mapStateToProps = createStructuredSelector({
   // CurrentBlockInfo
   lastBlockStats: selectLastBlockStats(),
+  unregisteredBps: selectUnregisteredBps(),
   // GeneralInfo
   // Transactions
   transactionsList: selectTransactionsList(),
@@ -53,12 +55,17 @@ export default class FirstSection extends PureComponent {
       transactionsList,
       transactionsInfo,
       actions: { toggleModal },
+      unregisteredBps,
     } = this.props;
+
+    // Without reregistered
+    const filteredBps = unregisteredBps.filter(bp => !bp.reregisteredAt);
 
     return (
       <SectionOne>
         <CurrentBlockInfo lastBlockStats={lastBlockStats} />
         <GeneralInfo toggleModal={toggleModal} headBlockNum={lastBlockStats.head_block_num} />
+        {filteredBps.length ? <UnregisteredBps unregisteredBps={filteredBps} /> : null}
         <Transactions
           transactionsList={transactionsList}
           transactionsInfo={transactionsInfo}
@@ -76,4 +83,6 @@ FirstSection.propTypes = {
   transactionsList: PropTypes.array,
   transactionsInfo: PropTypes.object,
   actions: PropTypes.object,
+  // UnregisteredBps
+  unregisteredBps: PropTypes.array,
 };
