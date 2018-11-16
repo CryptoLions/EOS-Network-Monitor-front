@@ -51,8 +51,8 @@ export const OrgNameCell = Cell.extend`
 `;
 
 export const NameCell = Cell.extend`
-  width: 220px;
-  min-width: 220px;
+  width: 290px;
+  min-width: 290px;
   position: sticky;
   left: 0;
   top: 0;
@@ -165,6 +165,11 @@ export const Index = styled.div`
 export const TextSpan = styled.span`
   font-size: 10px;
   color: #84878b;
+`;
+export const ReregisteredSpan = styled.span`
+  font-style: italic;
+  margin-left: 4px;
+  font-size: 11px;
 `;
 
 export const DetailsTextSpan = TextSpan.extend`

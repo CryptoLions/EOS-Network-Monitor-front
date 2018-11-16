@@ -23,7 +23,7 @@ import {
   selectCheckedProducers,
 } from '../../../../bus/producers/selectors';
 import { selectTableColumnState } from '../../../../bus/ui/selectors';
-import { selectHeadBlockNum } from '../../../../bus/generalStats/selectors';
+import { selectHeadBlockNum, selectUnregisteredBps } from '../../../../bus/generalStats/selectors';
 
 // Utils
 import renderEnhancer from '../../../../hoc/renderEnhancer';
@@ -43,6 +43,8 @@ const mapStateToProps = createStructuredSelector({
   filterInputValue: selectFilterInputValue(),
   // CurrentBlockInfo
   headBlockNum: selectHeadBlockNum(),
+  // Unregistered bps
+  unregistered: selectUnregisteredBps(),
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -138,10 +140,13 @@ class Table extends PureComponent {
       actions: { toggleModal, toggleProducerSelection },
       selectedProducers,
       filterInputValue,
+      unregistered,
     } = this.props;
     const { colsNumber, isTableScrolled } = this.state;
 
     const filteredProducers = this.filterHandler(producers);
+    const reregisteredBps = unregistered.filter(bp => bp.reregisteredAt);
+
     return (
       <Fragment>
         <TableContainer innerRef={this.tableContainer} onScroll={this.tableScrollHandler}>
@@ -164,6 +169,7 @@ class Table extends PureComponent {
                       colsNumber={colsNumber}
                       isTableScrolled={isTableScrolled}
                       index={index}
+                      reregistered={reregisteredBps.some(bp => bp.name === producer.name)}
                     />
                   </Fragment>
                 ))}
@@ -183,6 +189,7 @@ Table.propTypes = {
   actions: PropTypes.object,
   filterInputValue: PropTypes.string,
   lastHash: PropTypes.string,
+  unregistered: PropTypes.array,
 };
 
 export default renderEnhancer(Table);
