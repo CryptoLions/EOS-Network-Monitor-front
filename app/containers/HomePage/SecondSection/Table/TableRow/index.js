@@ -66,6 +66,22 @@ export default class TableRow extends PureComponent {
     }
   }
 
+  getProducerImage = () => {
+    const { producer } = this.props;
+    if (
+      !producer ||
+      !producer.bpData ||
+      !producer.bpData.org ||
+      !producer.bpData.org.branding ||
+      !producer.bpData.org.branding.logo_256
+    ) {
+      return '';
+    }
+    const url = producer.bpData.org.branding.logo_256;
+    if (url.indexOf('https') < 0) return url.replace('http', 'https');
+    return url;
+  };
+
   getProducerUrl = () => {
     const { producer } = this.props;
 
@@ -200,6 +216,7 @@ export default class TableRow extends PureComponent {
     const producerUrl = this.getProducerUrl();
     const p2pPort = this.extractCorrectP2pPort(nodes);
     const address = this.extractCorrectAddress(nodes);
+    const producerImage = this.getProducerImage();
 
     const workingEndpointsNumber = this.countWorkingEndpoints(producer.endpoints);
     const mostEndpointsAreDown =
@@ -242,7 +259,7 @@ export default class TableRow extends PureComponent {
                 <ImageBackup>
                   {producer.bpData &&
                     producer.bpData.org &&
-                    producer.bpData.org.branding && <BpImage src={producer.bpData.org.branding.logo_256} />}
+                    producer.bpData.org.branding && <BpImage src={producerImage} />}
                 </ImageBackup>
                 <TextLink onClick={() => toggleModal('accountInfo', producer.name)}>{producer.name}</TextLink>
                 <ExternalLink link={producerUrl} />
