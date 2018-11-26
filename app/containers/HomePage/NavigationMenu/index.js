@@ -104,7 +104,7 @@ export default class NavigationMenu extends PureComponent {
             {t('i18nNavigationMenu.liveTpsChart')}
           </BlueLink>
           <Border />
-          <BlueLink href="http://jungle.cryptolions.io" target="__blank">
+          <BlueLink href="https://monitor.jungletestnet.io" target="__blank">
             {t('i18nNavigationMenu.testnet')}
           </BlueLink>
           <Border />
