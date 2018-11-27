@@ -30,7 +30,7 @@ export default class Notifications extends PureComponent {
             <TextSpan>
               {/* <TextSpanBold>Note:</TextSpanBold>{' '} */}
               New version:{' '}
-              <StyledLink href="https://github.com/CryptoLions/EOS-Network-monitor/" target="__blank">
+              <StyledLink href="https://github.com/CryptoLions/EOS-Network-Monitor-back#release-notes" target="__blank">
                 v2.0-d
                 {process.env.VERSION_NUMBER}
               </StyledLink>
