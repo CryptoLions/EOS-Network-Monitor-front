@@ -8,7 +8,7 @@ import store from 'store';
 // Styles
 import { Container, Notification, TextSpan, StyledLink, Cross } from './styles';
 
-const NOTIFICATION_ID = 3;
+const NOTIFICATION_ID = 4;
 
 export default class Notifications extends PureComponent {
   state = {
