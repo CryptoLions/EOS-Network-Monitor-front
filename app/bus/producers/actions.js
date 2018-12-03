@@ -1,8 +1,10 @@
 import types from './types';
 
+const options = { credentials: 'omit' };
+
 export const producerActions = Object.freeze({
   fetchProducers: () => async dispatch => {
-    const response = await fetch(`${process.env.API_URL}/api/v1/table`);
+    const response = await fetch(`${process.env.API_URL}/api/v1/table`, options);
     const producers = await response.json();
 
     return dispatch({
@@ -14,7 +16,7 @@ export const producerActions = Object.freeze({
   },
 
   fetchBlackList: () => async dispatch => {
-    const response = await fetch(`${process.env.API_URL}/api/v1/theblacklist`);
+    const response = await fetch(`${process.env.API_URL}/api/v1/theblacklist`, options);
     const blackList = await response.json();
 
     return dispatch({
