@@ -94,6 +94,9 @@ class SocketClient {
 
     // Reload page
     this.socket.on('reload_page', () => {
+      if (!window.caches) {
+        return console.log('No window caches ===', window.caches);
+      }
       window.caches.keys().then(res => {
         if (!res) {
           console.log('No cache === ', res);
