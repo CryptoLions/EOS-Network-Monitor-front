@@ -9,7 +9,7 @@ COPY . /www
 WORKDIR /www
 
 # set env variables
-ARG API_URL=http://eosnetworkmonitor.io:3000 
+ARG API_URL=https://api.eosnetworkmonitor.io 
 ENV API_URL=${API_URL}
 
 # Install Node.js dependencies

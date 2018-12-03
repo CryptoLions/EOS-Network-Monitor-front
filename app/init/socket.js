@@ -93,7 +93,17 @@ class SocketClient {
     });
 
     // Reload page
-    this.socket.on('reload_page', () => window.location.reload());
+    this.socket.on('reload_page', () => {
+      window.caches.keys().then(res => {
+        if (!res) {
+          console.log('No cache === ', res);
+        }
+        res.forEach(elem => {
+          window.caches.delete(elem);
+        });
+        window.location.reload();
+      });
+    });
 
     // Debug
     this.socket.on('reload', () => {
