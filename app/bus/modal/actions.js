@@ -2,13 +2,11 @@
 import types from './types';
 import { HISTORY_ITEMS_PER_PAGE, EOS } from '../../constants';
 
-const options = { credentials: 'omit' };
-
 export const modalActions = Object.freeze({
   fetchAccountInfo: producerName => async dispatch => {
     dispatch({ type: types.FETCHING_ACCOUNT_INFO });
 
-    const response = await fetch(`${process.env.API_URL}/api/v1/accounts/${producerName}`, options);
+    const response = await fetch(`${process.env.API_URL}/api/v1/accounts/${producerName}`);
     const data = await response.json();
     return dispatch({
       type: types.FETCHING_ACCOUNT_INFO_SUCCESS,
@@ -20,8 +18,7 @@ export const modalActions = Object.freeze({
     dispatch({ type: types.FETCHING_ACCOUNT_HISTORY });
     const response = await fetch(
       `${process.env.API_URL}/api/v1/accounts/${producerName}/history?skip=${HISTORY_ITEMS_PER_PAGE *
-        page}&limit=${HISTORY_ITEMS_PER_PAGE}`,
-      options
+        page}&limit=${HISTORY_ITEMS_PER_PAGE}`
     );
     const data = await response.json();
     return dispatch({
@@ -44,7 +41,7 @@ export const modalActions = Object.freeze({
   fetchTxInfo: txId => async dispatch => {
     dispatch({ type: types.FETCHING_TX_INFO });
     try {
-      const response = await fetch(`${process.env.API_URL}/api/v1/transactions/${txId}`, options);
+      const response = await fetch(`${process.env.API_URL}/api/v1/transactions/${txId}`);
       const data = await response.json();
       return dispatch({
         type: types.FETCHING_TX_INFO_SUCCESS,
@@ -61,7 +58,7 @@ export const modalActions = Object.freeze({
     dispatch({ type: types.FETCHING_P2P_ADDRESSES });
 
     try {
-      const response = await fetch(`${process.env.API_URL}/api/v1/p2p/addresses`, options);
+      const response = await fetch(`${process.env.API_URL}/api/v1/p2p/addresses`);
       const data = await response.json();
       return dispatch({
         type: types.FETCHING_P2P_ADDRESSES_SUCCESS,
@@ -78,7 +75,7 @@ export const modalActions = Object.freeze({
     dispatch({ type: types.FETCHING_BP_JSON });
 
     try {
-      const response = await fetch(`${process.env.API_URL}/api/v1/chain/${accountName}/bp`, options);
+      const response = await fetch(`${process.env.API_URL}/api/v1/chain/${accountName}/bp`);
       const data = await response.json();
 
       return dispatch({
@@ -96,7 +93,7 @@ export const modalActions = Object.freeze({
     dispatch({ type: types.FETCHING_RAM_PRICE });
 
     try {
-      const response = await fetch(`${process.env.API_URL}/api/v1/ram?from=${from}&to=${to}`, options);
+      const response = await fetch(`${process.env.API_URL}/api/v1/ram?from=${from}&to=${to}`);
 
       const data = await response.json();
       return dispatch({
