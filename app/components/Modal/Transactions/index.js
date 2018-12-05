@@ -24,7 +24,7 @@ import { uiActions } from '../../../bus/ui/actions';
 import { modalActions } from '../../../bus/modal/actions';
 
 // Styles
-import { InputsDiv, GetButton, Header, HeadContainer, HeadBox, HeadText, Main, Link } from '../styles';
+import { InputsDiv, GetButton, Header, HeadContainer, HeadBox, HeadText, Main, Link, PreWrapper, InputsJson } from '../styles';
 import { TransactionsInput } from './styles';
 
 const mapStateToProps = createStructuredSelector({
@@ -107,8 +107,18 @@ export default class Transactions extends PureComponent {
         </Header>
         <LoadingLine state={modalDataFetchingState} />
         <Main>
+            <InputsJson>
+              <PreWrapper>
+                {JSON.stringify(
+                  txIdData,
+                  null,
+                  2
+                )}
+              </PreWrapper>
+            </InputsJson>
+          
           {!modalDataFetchingState &&
-            !!Object.keys(txIdData).length && (
+            txIdData.msgObject && !!Object.keys(txIdData).length && (
               <Fragment>
                 <div>
                   <span>{t('i18nModal.i18nTransactions.block')}:</span>
@@ -150,6 +160,7 @@ export default class Transactions extends PureComponent {
                 </div>
               </Fragment>
             )}
+        }
         </Main>
       </Fragment>
     );

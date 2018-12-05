@@ -25,6 +25,15 @@ export const ModalWrapper = styled.div`
   animation: ${modalWrapperBgc} 0.5s;
 `;
 
+export const InputsJson = styled.div`
+  padding: 0 20px;
+`;
+
+export const PreWrapper = styled.pre`
+  white-space: pre-wrap;
+  word-wrap: break-word;
+`;
+
 export const ModalContainer = styled.section`
   position: relative;
   z-index: 2;
