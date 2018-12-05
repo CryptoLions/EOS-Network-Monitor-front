@@ -190,3 +190,27 @@ export const SwitcherWrapper = styled.div`
     animation: ${navMenuAppear} 0.3s;
   }
 `;
+
+// Svg
+export const SvgDownArrow = styled.svg`
+  width: 12px;
+  height: 12px;
+  ${({ isArrowClicked }) =>
+    isArrowClicked && {
+      transform: 'rotate(180deg)',
+    }};
+`;
+
+export const SvgExternalLink = styled.svg`
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+
+  & path {
+    fill: #007bff;
+  }
+
+  &:hover path {
+    fill: #005dc1;
+  }
+`;
