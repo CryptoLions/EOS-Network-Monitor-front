@@ -25,9 +25,14 @@ export default class EosPrice extends PureComponent {
 
   componentDidMount() {
     this.getMainData();
+    this.interval = setInterval(this.getMainData, 3000);
   }
 
-  getMainData() {
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  getMainData = () => {
     fetch('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=EOS&tsyms=USD')
       .then(response => response.json())
       .then(data => {
@@ -46,7 +51,7 @@ export default class EosPrice extends PureComponent {
           );
         }
       });
-  }
+  };
 
   generateDatasets = price => {
     const data = price.map(item => ({
