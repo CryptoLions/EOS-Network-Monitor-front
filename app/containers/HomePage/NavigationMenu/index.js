@@ -6,7 +6,7 @@ import store from 'store';
 
 // Svg
 import { SvgMenuButton } from './svg';
-import { DownArrow, ExternalLink } from './svg/arrow';
+import { /* DownArrow, */ ExternalLink } from './svg/arrow';
 
 // Styles
 import {
@@ -23,8 +23,8 @@ import {
 } from './styles';
 
 // Images
-// import logoGif from '../../../assets/images/big.gif';
-import logo from '../../../assets/images/logo.png';
+import logoGif from '../../../assets/images/small_t.gif';
+import logo from '../../../assets/images/logo_main.png';
 
 @translate()
 export default class NavigationMenu extends PureComponent {
@@ -61,19 +61,20 @@ export default class NavigationMenu extends PureComponent {
     }));
   };
 
+  // <LogoImage src={logo} alt="Logo" />
+
   render() {
-    const { isNavMenuActive } = this.state;
+    const { isNavMenuActive, isLogoActive } = this.state;
     const { t } = this.props;
     return (
       <Container>
         <Header>
           <SvgMenuButton toggleNavMenuHandler={this.toggleNavMenuHandler} />
-          {/* {isLogoActive ? (
-            <LogoImage src={logoGif} alt="Logo" onClick={this.toggleLogoHandler} />
+          {isLogoActive ? (
+            <LogoImage src={logoGif} alt="Logo" onMouseLeave={this.toggleLogoHandler} style={{ width: '65px' }} />
           ) : (
-            <LogoImage src={logo} alt="Logo" onClick={this.toggleLogoHandler} />
-          )} */}
-          <LogoImage src={logo} alt="Logo" />
+            <LogoImage src={logo} alt="Logo" onMouseOver={this.toggleLogoHandler} onFocus={this.toggleLogoHandler} />
+          )}
           <Headlink href="http://eosnetworkmonitor.io/">{t('i18nNavigationMenu.headLink')}</Headlink>
         </Header>
         <SwitcherWrapper isNavMenuActive={isNavMenuActive}>
