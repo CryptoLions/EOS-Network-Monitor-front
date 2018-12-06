@@ -203,6 +203,9 @@ export default Object.freeze({
         eosioRamFee: 'Eosio ram 费用',
         eosioSaving: 'Eosio saving',
       },
+      i18nEosPrice: {
+        title: 'EOS 价钱',
+      },
       // <UnregisteredBps />
       i18nUnregisteredBps: {
         title: 'Unregistered BPs in last 24 hours',
