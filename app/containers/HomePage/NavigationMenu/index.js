@@ -115,7 +115,7 @@ export default class NavigationMenu extends PureComponent {
           </BlueLink>
           <Border />
           <BlueLink href="https://bloks.io" target="__blank">
-            explorer <ExternalLink />
+            Explorer <ExternalLink />
           </BlueLink>
           <Border />
           <BlueLink onClick={this.toggleModalHandler('legend', null)}>{t('i18nNavigationMenu.legend')}</BlueLink>

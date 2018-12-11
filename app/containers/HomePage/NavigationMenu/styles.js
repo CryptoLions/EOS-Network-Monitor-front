@@ -162,7 +162,7 @@ export const BlueLink = link.extend`
 `;
 
 export const Border = styled.span`
-  padding: 0 15px;
+  padding: 0 9px;
   color: #007bff;
   &::after {
     content: '|';

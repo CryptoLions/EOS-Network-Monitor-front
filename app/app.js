@@ -44,6 +44,18 @@ const ErrorBoundary = bugsnagClient.use(createPlugin(React));
 
 socket.init(store);
 
+if (!window.caches) {
+  console.log('No window caches ===', window.caches);
+}
+window.caches.keys().then(res => {
+  if (!res) {
+    console.log('No cache === ', res);
+  }
+  res.forEach(elem => {
+    window.caches.delete(elem);
+  });
+});
+
 const render = () => {
   ReactDOM.render(
     <ErrorBoundary>
