@@ -101,7 +101,12 @@ export default class TableRow extends PureComponent {
 
   versionColorsHandler = backgroundColor => {
     const { producer } = this.props;
-    if (producer.version && producer.endpoints[0] && producer.endpoints[0].server_version_string) {
+    if (
+      producer.version &&
+      producer.endpoints &&
+      producer.endpoints[0] &&
+      producer.endpoints[0].server_version_string
+    ) {
       const version = parseInt(`0x${producer.version}`, 16);
       return (
         <VersionCell backgroundColor={backgroundColor} color={getColorByVersion(version)}>
