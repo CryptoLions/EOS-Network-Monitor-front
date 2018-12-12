@@ -1,7 +1,7 @@
 // Important modules this config uses
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const OfflinePlugin = require('offline-plugin');
+// const OfflinePlugin = require('offline-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = require('./webpack.base.babel')({
