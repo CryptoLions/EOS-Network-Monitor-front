@@ -39,18 +39,20 @@ export default class EosPrice extends PureComponent {
         if (data && data.DISPLAY && data.DISPLAY.EOS && data.DISPLAY.EOS.USD) {
           this.setState({ eosPrice: data.DISPLAY.EOS.USD.PRICE });
         }
-      });
+      })
+      .catch(err => console.error(err));
     fetch('https://min-api.cryptocompare.com/data/histohour?fsym=EOS&tsym=USD&limit=24&aggregate=3&e=CCCAGG')
       .then(response => response.json())
       .then(data => {
-        if (data.Data) {
+        if (data && data.Data) {
           this.chart = new CustomChart(
             this.canvas.getContext('2d'),
             { datasets: this.generateDatasets(data.Data) },
             chartOptions
           );
         }
-      });
+      })
+      .catch(err => console.error(err));
   };
 
   generateDatasets = price => {
