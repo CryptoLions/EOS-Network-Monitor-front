@@ -45,9 +45,9 @@ const ErrorBoundary = bugsnagClient.use(createPlugin(React));
 function updateCache() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistrations().then(registrations => {
-      for (const registration of registrations) {
+      registrations.forEach(registration => {
         registration.unregister();
-      }
+      });
     });
     if (window.caches) {
       window.caches.keys().then(res => {

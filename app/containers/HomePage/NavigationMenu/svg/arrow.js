@@ -15,7 +15,7 @@ DownArrow.propTypes = {
   isArrowClicked: PropTypes.bool,
 };
 
-export const ExternalLink = ({ link }) => (
+export const ExternalLink = () => (
   <SvgExternalLink viewBox="0 0 511.626 511.627">
     <path
       d="M392.857,292.354h-18.274c-2.669,0-4.859,0.855-6.563,2.573c-1.718,1.708-2.573,3.897-2.573,6.563v91.361
@@ -36,7 +36,3 @@ export const ExternalLink = ({ link }) => (
     />
   </SvgExternalLink>
 );
-
-ExternalLink.propTypes = {
-  link: PropTypes.string,
-};
