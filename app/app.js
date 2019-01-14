@@ -13,6 +13,7 @@ import 'sanitize.css/sanitize.css';
 // Import root app
 import App from 'containers/App';
 
+
 // Import Language Provider
 import bugsnagClient from 'utils/bugsnag';
 import socket from 'init/socket';
@@ -41,6 +42,41 @@ import './assets/styles/globalStyles';
 // Create redux store with history
 const MOUNT_NODE = document.getElementById('app');
 const ErrorBoundary = bugsnagClient.use(createPlugin(React));
+
+const version = localStorage.getItem('version');
+fetch(`${process.env.API_URL}/api/v1/version`)
+      .then(response => response.json())
+      .then(data => {
+            let mainVersion = `${data.version}`;
+            if (!version){
+                localStorage.setItem('version', mainVersion);
+            } else if (version !== mainVersion){
+                localStorage.setItem('version', mainVersion);
+                updateCache();
+            }
+      }).catch(err => console.error(err));;
+
+function updateCache(){
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(registrations => {
+          for (const registration of registrations) {
+            registration.unregister()
+          }
+        });
+        if (window.caches) {
+            window.caches.keys().then(res => {
+              if (!res) {
+                console.log('No cache === ', res);
+              }
+              console.log(res);
+              res.forEach(elem => {
+                window.caches.delete(elem);
+              });
+              window.location.reload();
+            });     
+        }
+      }
+}
 
 socket.init(store);
 

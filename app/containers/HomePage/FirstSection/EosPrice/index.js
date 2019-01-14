@@ -33,7 +33,15 @@ export default class EosPrice extends PureComponent {
   }
 
   getMainData = () => {
-    fetch('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=EOS&tsyms=USD')
+    let header = new Headers({
+        'Access-Control-Allow-Origin':'*'
+    });
+    let options = {
+        method: 'GET',
+        mode: 'cors',
+        header: header
+    };
+    fetch('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=EOS&tsyms=USD', options)
       .then(response => response.json())
       .then(data => {
         if (data && data.DISPLAY && data.DISPLAY.EOS && data.DISPLAY.EOS.USD) {
@@ -41,7 +49,7 @@ export default class EosPrice extends PureComponent {
         }
       })
       .catch(err => console.error(err));
-    fetch('https://min-api.cryptocompare.com/data/histohour?fsym=EOS&tsym=USD&limit=24&aggregate=3&e=CCCAGG')
+    fetch('https://min-api.cryptocompare.com/data/histohour?fsym=EOS&tsym=USD&limit=24&aggregate=3&e=CCCAGG', options)
       .then(response => response.json())
       .then(data => {
         if (data && data.Data) {
