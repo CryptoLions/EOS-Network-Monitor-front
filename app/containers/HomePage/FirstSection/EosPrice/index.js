@@ -33,13 +33,13 @@ export default class EosPrice extends PureComponent {
   }
 
   getMainData = () => {
-    let header = new Headers({
-        'Access-Control-Allow-Origin':'*'
+    const header = new Headers({
+      'Access-Control-Allow-Origin': '*',
     });
-    let options = {
-        method: 'GET',
-        mode: 'cors',
-        header: header
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      header,
     };
     fetch('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=EOS&tsyms=USD', options)
       .then(response => response.json())

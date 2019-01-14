@@ -97,20 +97,20 @@ class SocketClient {
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(registrations => {
           for (const registration of registrations) {
-            registration.unregister()
+            registration.unregister();
           }
         });
         if (window.caches) {
-            window.caches.keys().then(res => {
-              if (!res) {
-                console.log('No cache === ', res);
-              }
-              console.log(res);
-              res.forEach(elem => {
-                window.caches.delete(elem);
-              });
-              window.location.reload();
-            });     
+          window.caches.keys().then(res => {
+            if (!res) {
+              console.log('No cache === ', res);
+            }
+            console.log(res);
+            res.forEach(elem => {
+              window.caches.delete(elem);
+            });
+            window.location.reload();
+          });
         }
       }
     });
