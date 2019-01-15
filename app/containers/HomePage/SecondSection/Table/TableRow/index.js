@@ -74,12 +74,12 @@ export default class TableRow extends PureComponent {
       !producer.bpData.org ||
       !producer.bpData.org.branding ||
       !producer.bpData.org.branding.logo_256 */
-      !producer.logo
+      !producer.logoCached
     ) {
       return '';
     }
     // const url = producer.bpData.org.branding.logo_256;
-    const url = process.env.API_URL + producer.logo;
+    const url = process.env.API_URL + producer.logoCached;
     // if (url.indexOf('https') < 0) return url.replace('http', 'https');
     return url;
   };
@@ -263,7 +263,7 @@ export default class TableRow extends PureComponent {
               </LabelWrapper>
               <Index>{producer.index + 1}</Index>
               <NameWrapper>
-                <ImageBackup>{producer.logo && <BpImage src={producerImage} />}</ImageBackup>
+                <ImageBackup>{producer.logoCached && <BpImage src={producerImage} />}</ImageBackup>
                 <TextLink onClick={() => toggleModal('accountInfo', producer.name)}>{producer.name}</TextLink>
                 <ExternalLink link={producerUrl} />
                 {reregistered && <ReregisteredSpan>re-registered</ReregisteredSpan>}
