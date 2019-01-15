@@ -69,16 +69,18 @@ export default class TableRow extends PureComponent {
   getProducerImage = () => {
     const { producer } = this.props;
     if (
-      !producer ||
+      /*! producer ||
       !producer.bpData ||
       !producer.bpData.org ||
       !producer.bpData.org.branding ||
-      !producer.bpData.org.branding.logo_256
+      !producer.bpData.org.branding.logo_256 */
+      !producer.logo
     ) {
       return '';
     }
-    const url = producer.bpData.org.branding.logo_256;
-    if (url.indexOf('https') < 0) return url.replace('http', 'https');
+    // const url = producer.bpData.org.branding.logo_256;
+    const url = process.env.API_URL + producer.logo;
+    // if (url.indexOf('https') < 0) return url.replace('http', 'https');
     return url;
   };
 
@@ -261,11 +263,7 @@ export default class TableRow extends PureComponent {
               </LabelWrapper>
               <Index>{producer.index + 1}</Index>
               <NameWrapper>
-                <ImageBackup>
-                  {producer.bpData &&
-                    producer.bpData.org &&
-                    producer.bpData.org.branding && <BpImage src={producerImage} />}
-                </ImageBackup>
+                <ImageBackup>{producer.logo && <BpImage src={producerImage} />}</ImageBackup>
                 <TextLink onClick={() => toggleModal('accountInfo', producer.name)}>{producer.name}</TextLink>
                 <ExternalLink link={producerUrl} />
                 {reregistered && <ReregisteredSpan>re-registered</ReregisteredSpan>}
