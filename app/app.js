@@ -42,7 +42,7 @@ import './assets/styles/globalStyles';
 const MOUNT_NODE = document.getElementById('app');
 const ErrorBoundary = bugsnagClient.use(createPlugin(React));
 
-function updateCache() {
+/* function updateCache() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistrations().then(registrations => {
       registrations.forEach(registration => {
@@ -77,6 +77,7 @@ fetch(`${process.env.API_URL}/api/v1/version`)
     }
   })
   .catch(err => console.error(err));
+*/
 
 socket.init(store);
 
