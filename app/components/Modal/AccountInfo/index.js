@@ -145,18 +145,21 @@ export default class AccountInfo extends PureComponent {
                 </DataBlock>
                 {accountInfo.permissions && (
                   <DataBlock>
-                    {accountInfo.permissions[0].required_auth.keys[0] && (
-                      <div>
-                        <TextSpanBold>{t('i18nModal.i18nAccountInfo.activeKey')}:</TextSpanBold>
-                        {accountInfo.permissions[0].required_auth.keys[0].key || '--'}
-                      </div>
-                    )}
-                    {accountInfo.permissions[1].required_auth.keys[0] && (
-                      <div>
-                        <TextSpanBold>{t('i18nModal.i18nAccountInfo.ownerKey')}:</TextSpanBold>
-                        {accountInfo.permissions[1].required_auth.keys[0].key || '--'}
-                      </div>
-                    )}
+                    {accountInfo.permissions &&
+                      accountInfo.permissions.length &&
+                      accountInfo.permissions.map(elem => (
+                        <div>
+                          <strong>{elem.perm_name}: </strong>
+                          {(elem.required_auth.keys[0] && elem.required_auth.keys[0].key) ||
+                            (elem.required_auth.keys.length === 0 &&
+                              elem.required_auth.accounts.length &&
+                              elem.required_auth.accounts.map(el => (
+                                <div>
+                                  &nbsp; <strong>{el.permission.actor}</strong> - weight: <strong>{el.weight}</strong>
+                                </div>
+                              )))}
+                        </div>
+                      ))}
                   </DataBlock>
                 )}
                 <DataBlock>
