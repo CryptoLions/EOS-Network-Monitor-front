@@ -249,6 +249,13 @@ export default class TableRow extends PureComponent {
       if (producer.missedProducing) backgroundColorFixedCell = 'rgb(255, 4, 4)';
     }
 
+    const createHashString = hash => {
+      if (!hash) {
+        return 'no hash found';
+      }
+      return `${hash.slice(0, 4)}...${hash.slice(hash.length - 5)}`;
+    };
+
     return (
       <Fragment>
         <Trow>
@@ -398,9 +405,13 @@ export default class TableRow extends PureComponent {
           {tableColumnState.blackListHash && (
             <Tdata backgroundColor={backgroundColor}>
               {producer.blackListHash === lastHash ? (
-                <StyledSpan color="#11a827">current</StyledSpan>
+                <StyledSpan color={getColorByVersion(producer.blackListHash)}>
+                  {createHashString(producer.blackListHash)}
+                </StyledSpan>
               ) : (
-                <StyledSpan color="#ff5456">old</StyledSpan>
+                <StyledSpan color={getColorByVersion(producer.blackListHash)}>
+                  {createHashString(producer.blackListHash)}
+                </StyledSpan>
               )}{' '}
             </Tdata>
           )}
