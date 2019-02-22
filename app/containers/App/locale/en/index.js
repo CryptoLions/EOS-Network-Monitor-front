@@ -206,7 +206,7 @@ export default Object.freeze({
       },
       // <EosPrice />
       i18nEosPrice: {
-        title: 'EOS price',
+        title: 'EOS Price (3 days)',
       },
       // <UnregisteredBps />
       i18nUnregisteredBps: {
