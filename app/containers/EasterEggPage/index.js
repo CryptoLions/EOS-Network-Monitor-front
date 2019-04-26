@@ -29,7 +29,7 @@ const mapStateToProps = createStructuredSelector({
   actualBackgroundNumber: selectActualBackgroundNumber(),
 });
 
-const numberOfSlides = 19;
+const numberOfSlides = 34;
 
 @connect(mapStateToProps)
 export default class EasterEggPage extends PureComponent {
