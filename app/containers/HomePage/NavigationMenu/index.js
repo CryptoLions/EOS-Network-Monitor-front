@@ -23,14 +23,13 @@ import {
 } from './styles';
 
 // Images
-import logoGif from '../../../assets/images/small_t.gif';
-import logo from '../../../assets/images/logo_main.png';
+import logo from '../../../assets/images/xec.png';
 
 @translate()
 export default class NavigationMenu extends PureComponent {
   state = {
     isNavMenuActive: false,
-    isLogoActive: false,
+    // isLogoActive: false,
   };
 
   componentDidUpdate() {
@@ -55,27 +54,23 @@ export default class NavigationMenu extends PureComponent {
     this.props.i18n.changeLanguage(lng);
   };
 
-  toggleLogoHandler = () => {
+  /* toggleLogoHandler = () => {
     this.setState(prevState => ({
       isLogoActive: !prevState.isLogoActive,
     }));
-  };
+  }; */
 
   // <LogoImage src={logo} alt="Logo" />
 
   render() {
-    const { isNavMenuActive, isLogoActive } = this.state;
+    const { isNavMenuActive /* isLogoActive */ } = this.state;
     const { t } = this.props;
     return (
       <Container>
         <Header>
           <SvgMenuButton toggleNavMenuHandler={this.toggleNavMenuHandler} />
-          {isLogoActive ? (
-            <LogoImage src={logoGif} alt="Logo" onMouseLeave={this.toggleLogoHandler} style={{ width: '65px' }} />
-          ) : (
-            <LogoImage src={logo} alt="Logo" onMouseOver={this.toggleLogoHandler} onFocus={this.toggleLogoHandler} />
-          )}
-          <Headlink href="http://eosnetworkmonitor.io/">{t('i18nNavigationMenu.headLink')}</Headlink>
+          <LogoImage src={logo} alt="Logo" style={{ width: '40px' }} />
+          <Headlink href="/">{t('i18nNavigationMenu.headLink')}</Headlink>
         </Header>
         <SwitcherWrapper isNavMenuActive={isNavMenuActive}>
           <LanguageSwitcher onClick={this.changeLanguage('en-US', 'en')}>En</LanguageSwitcher>
@@ -106,7 +101,7 @@ export default class NavigationMenu extends PureComponent {
             {t('i18nNavigationMenu.liveTpsChart')}
           </BlueLink>
           <Border />
-          <BlueLink href="https://monitor.jungletestnet.io" target="__blank">
+          <BlueLink href="https://testnet.europechain.io" target="__blank">
             {t('i18nNavigationMenu.testnet')} <ExternalLink />
           </BlueLink>
           <Border />
@@ -114,7 +109,7 @@ export default class NavigationMenu extends PureComponent {
             {t('i18nNavigationMenu.nodeInstallation')} <ExternalLink />
           </BlueLink>
           <Border />
-          <BlueLink href="https://bloks.io" target="__blank">
+          <BlueLink href="https://xec.eosweb.net" target="__blank">
             Explorer <ExternalLink />
           </BlueLink>
           <Border />

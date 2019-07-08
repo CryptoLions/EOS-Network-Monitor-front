@@ -81,8 +81,9 @@ export const LanguageSwitcher = styled.span`
 `;
 
 export const LogoImage = styled.img`
-  width: 65px;
+  width: 40px;
   margin-right: 13px;
+  margin-top: -10px;
   // cursor: pointer;
 
   @media (max-width: 768px) {

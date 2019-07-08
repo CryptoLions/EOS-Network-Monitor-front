@@ -2,7 +2,7 @@ export default Object.freeze({
   translations: {
     // <NavigationMenu />
     i18nNavigationMenu: {
-      headLink: 'EOS Network Monitor.io',
+      headLink: 'XEC Network Monitor',
       accountInfo: 'Account Info',
       accountHistory: 'Account History',
       txInfo: 'TX Info',
@@ -113,7 +113,7 @@ export default Object.freeze({
         about: 'ABOUT',
         content: [
           'All information comes from quering PUBLIC nodes. Block producing nodes are usually hidden',
-          'EOS Network Monitor is a tool to check EOS public endpoints and show general info',
+          'XEC Network Monitor is a tool to check XEC public endpoints and show general info',
           'It shows all registerd producers and ftech info about endpoints from bp.json file',
         ],
         tps: ['TPS', 'Transaction per second'],
@@ -146,7 +146,7 @@ export default Object.freeze({
         title: 'VOTE',
         // Main Text
         byCompletingThisAction: 'By completing this action, I agree to the',
-        eosConstitution: 'EOS Constitution',
+        eosConstitution: 'XEC Constitution',
         theIntentOf: `The intent of the 'vote producer' action is to cast a valid vote for up to 30 BP candidates.`,
         iAmEitherThe: `I am either the beneficial owner of the tokens with which I am voting, or I have proof that I have been authorized to vote on behalf of the beneficial owner(s).`,
         iStipulateThat: `I stipulate that I have not and will not accept anything of value in exchange for these votes, on penalty of confiscation of these tokens, and other penalties.`,
@@ -175,7 +175,7 @@ export default Object.freeze({
       },
       // <RamPrice />
       i18nRamPrice: {
-        title: 'EOS RAM price',
+        title: 'XEC RAM price',
       },
       // <LiveTps />
       i18nLiveTps: {
@@ -206,7 +206,7 @@ export default Object.freeze({
       },
       // <EosPrice />
       i18nEosPrice: {
-        title: 'EOS Price (3 days)',
+        title: 'XEC Price (3 days)',
       },
       // <UnregisteredBps />
       i18nUnregisteredBps: {
