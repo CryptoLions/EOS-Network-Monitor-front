@@ -105,7 +105,7 @@ export default class NavigationMenu extends PureComponent {
             {t('i18nNavigationMenu.testnet')} <ExternalLink />
           </BlueLink>
           <Border />
-          <BlueLink href="https://github.com/CryptoLions/EOS-MainNet" target="__blank">
+          <BlueLink href="https://github.com/Europechain" target="__blank">
             {t('i18nNavigationMenu.nodeInstallation')} <ExternalLink />
           </BlueLink>
           <Border />

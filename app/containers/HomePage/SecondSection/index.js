@@ -18,7 +18,7 @@ import { uiActions } from '../../../bus/ui/actions';
 import { selectFilterInputValue } from '../../../bus/producers/selectors';
 
 // Styles
-import { SectionTwo, Intumentary, ButtonVote } from './styles';
+import { SectionTwo, Intumentary /* ButtonVote */ } from './styles';
 
 const mapStateToProps = createStructuredSelector({
   // modal filter
@@ -35,6 +35,8 @@ const mapDispatchToProps = dispach => ({
   ),
 });
 
+// <ButtonVote onClick={this.showVoteModal}>{t('i18nSecondSection.i18nVote')}</ButtonVote>
+
 @connect(
   mapStateToProps,
   mapDispatchToProps
@@ -45,14 +47,14 @@ export default class SecondSection extends PureComponent {
 
   render() {
     const {
-      t,
+      // t,
       filterInputValue,
       actions: { setFilterInputValue },
     } = this.props;
     return (
       <SectionTwo>
         <Intumentary>
-          <ButtonVote onClick={this.showVoteModal}>{t('i18nSecondSection.i18nVote')}</ButtonVote>
+          <div />
           <FilterInput filterInputValue={filterInputValue} setFilterInputValue={setFilterInputValue} />
         </Intumentary>
         <Table />
@@ -62,7 +64,7 @@ export default class SecondSection extends PureComponent {
 }
 
 SecondSection.propTypes = {
-  t: PropTypes.func,
+  // t: PropTypes.func,
   // FilterInput
   filterInputValue: PropTypes.string,
   actions: PropTypes.object,
