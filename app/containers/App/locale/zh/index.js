@@ -174,7 +174,7 @@ export default Object.freeze({
       },
       // <RamPrice />
       i18nRamPrice: {
-        title: 'LYNX RAM 价格',
+        title: 'LNX RAM 价格',
       },
       // <LiveTps />
       i18nLiveTps: {
@@ -204,7 +204,7 @@ export default Object.freeze({
         eosioSaving: 'Eosio saving',
       },
       i18nEosPrice: {
-        title: 'LYNX 价钱',
+        title: 'LNX 价钱',
       },
       // <UnregisteredBps />
       i18nUnregisteredBps: {

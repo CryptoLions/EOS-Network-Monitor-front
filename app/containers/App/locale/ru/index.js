@@ -113,7 +113,7 @@ export default Object.freeze({
         about: 'ИНФОРМАЦИЯ',
         content: [
           'Вся информация приходит от опрашиваемых ПУБЛИЧНЫХ нод. Блок Продюсерские ноды, как правило, скрыты',
-          'LYNX Network Monitor это инструмент для проверки LYNX публичных конечных точек и мониторинга общей информации',
+          'LNX Network Monitor это инструмент для проверки LNX публичных конечных точек и мониторинга общей информации',
           'Отображаются все зарегистрированные продюсеры и извлекает инфо о конечных точках из bp.json file',
         ],
         tps: ['TPS', 'Транзакций в секунду'],
@@ -145,7 +145,7 @@ export default Object.freeze({
         title: 'ГОЛОСОВАТЬ',
         // Main Text
         byCompletingThisAction: 'Выполняя это действие, я согласен с',
-        eosConstitution: 'Конституцией LYNX',
+        eosConstitution: 'Конституцией LNX',
         theIntentOf: `Намерение действия 'vote producer'  отдает действительный голос до 30 кандидатов в БП.`,
         iAmEitherThe: `Я либо являюсь бенефициарным владельцем токенов которыми я голосую, либо у меня есть доказательство, что я был уполномочен голосовать от имени бенефициарного собственника(ов).`,
         iStipulateThat: `Я подтверждаю, что я не принимал и не буду принимать что-либо ценное, в обмен на эти голоса, под страхом конфискации этих токенов и других штрафных санкций.`,
@@ -174,7 +174,7 @@ export default Object.freeze({
       },
       // <RamPrice />
       i18nRamPrice: {
-        title: 'Цена LYNX RAM',
+        title: 'Цена LNX RAM',
       },
       // <LiveTps />
       i18nLiveTps: {
@@ -204,7 +204,7 @@ export default Object.freeze({
         eosioSaving: 'Eosio saving',
       },
       i18nEosPrice: {
-        title: 'LYNX цена',
+        title: 'LNX цена',
       },
       // <UnregisteredBps />
       i18nUnregisteredBps: {

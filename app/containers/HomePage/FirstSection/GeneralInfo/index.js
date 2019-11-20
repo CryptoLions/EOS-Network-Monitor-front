@@ -34,7 +34,7 @@ export default class GeneralInfo extends PureComponent {
       return '';
     }
     const [value] = balance.split(' ');
-    return `${formatNumber(value.substr(0, value.length - 2))} LYNX`;
+    return `${formatNumber(value.substr(0, value.length - 2))} LNX`;
   };
 
   render() {
@@ -50,7 +50,7 @@ export default class GeneralInfo extends PureComponent {
             <Fragment>
               <TextSpan>
                 {t('i18nFirstSection.i18nGeneralInfo.stakedTotal')}:{' '}
-                <GreenSpan>{tpsApsStats.stackedTotal && formatNumber(tpsApsStats.stackedTotal)} LYNX</GreenSpan>
+                <GreenSpan>{tpsApsStats.stackedTotal && formatNumber(tpsApsStats.stackedTotal)} LNX</GreenSpan>
               </TextSpan>
               <TextSpan>
                 {t('i18nFirstSection.i18nGeneralInfo.activatedStake')}:{' '}
