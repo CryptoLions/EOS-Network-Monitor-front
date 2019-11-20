@@ -2,7 +2,7 @@ export default Object.freeze({
   translations: {
     // <NavigationMenu />
     i18nNavigationMenu: {
-      headLink: 'XEC Network Monitor',
+      headLink: 'LYNX Network Monitor',
       accountInfo: '账户信息',
       accountHistory: '账户历史',
       txInfo: '交易信息',
@@ -174,7 +174,7 @@ export default Object.freeze({
       },
       // <RamPrice />
       i18nRamPrice: {
-        title: 'XEC RAM 价格',
+        title: 'LYNX RAM 价格',
       },
       // <LiveTps />
       i18nLiveTps: {
@@ -204,7 +204,7 @@ export default Object.freeze({
         eosioSaving: 'Eosio saving',
       },
       i18nEosPrice: {
-        title: 'XEC 价钱',
+        title: 'LYNX 价钱',
       },
       // <UnregisteredBps />
       i18nUnregisteredBps: {

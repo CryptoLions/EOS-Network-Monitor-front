@@ -23,7 +23,7 @@ import {
 } from './styles';
 
 // Images
-import logo from '../../../assets/images/xec.png';
+import logo from '../../../assets/images/lynx.png';
 
 @translate()
 export default class NavigationMenu extends PureComponent {
@@ -101,15 +101,15 @@ export default class NavigationMenu extends PureComponent {
             {t('i18nNavigationMenu.liveTpsChart')}
           </BlueLink>
           <Border />
-          <BlueLink href="https://testnet.europechain.io" target="__blank">
+          <BlueLink href="https://testnet.lynxchain.io/v1/chain/get_info" target="__blank">
             {t('i18nNavigationMenu.testnet')} <ExternalLink />
           </BlueLink>
           <Border />
-          <BlueLink href="https://github.com/Europechain" target="__blank">
+          <BlueLink href="https://lynxwallet.io/lynxchain" target="__blank">
             {t('i18nNavigationMenu.nodeInstallation')} <ExternalLink />
           </BlueLink>
           <Border />
-          <BlueLink href="https://xec.eosweb.net" target="__blank">
+          <BlueLink href="https://lynx.bloks.io" target="__blank">
             Explorer <ExternalLink />
           </BlueLink>
           <Border />
