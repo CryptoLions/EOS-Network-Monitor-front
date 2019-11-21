@@ -114,7 +114,7 @@ export default Object.freeze({
         content: [
           '所有信息都来自公共节点，出块节点通常是隐藏的',
           'EOS网络监视器是一个检查EOS公共节点并显示常规信息的工具',
-          '显示所有已注册的生产者，从节点的bp.json文件提取信息',
+          '显示所有已注册的生产者，从节点的lynx.json文件提取信息',
         ],
         tps: ['TPS', '每秒交易量'],
         aps: ['APS', '每秒动作数'],
@@ -127,7 +127,7 @@ export default Object.freeze({
         versionInformation: `版本信息是从公共节点查询获得的。出块节点通常是隐藏的。“不显示版本”的公共节点可能有合理的理由，比如回避已知的漏洞，但这些都很少见。`,
         unsynced: '未同步',
         thisDoesNot: `这并不一定意味着有分叉或者不同。它可能是节点重新同步，很快就会同步完成`,
-        bps: `以灰色标记的节点有出错，或丢失bp.json文件。我们会做一个周期检查。但是我们只检查前60名`,
+        bps: `以灰色标记的节点有出错，或丢失lynx.json文件。我们会做一个周期检查。但是我们只检查前60名`,
         moreinfo: '更多信息',
         // Ping color explanation block
         pingColorExplanation: 'PING 颜色说明',
@@ -166,7 +166,7 @@ export default Object.freeze({
       },
       // <BpJson />
       i18nBpJson: {
-        title: 'bp.json',
+        title: 'lynx.json',
       },
       // <ErrorMessage />
       i18nErrorMessage: {

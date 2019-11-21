@@ -39,7 +39,7 @@ const mapDispatchToProps = dispach => ({
 @translate()
 export default class BpJson extends PureComponent {
   componentDidMount() {
-    window.location.hash = `bp.json`;
+    window.location.hash = `lynx.json`;
     this.getData();
   }
 

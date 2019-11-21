@@ -85,7 +85,7 @@ export default class Legend extends PureComponent {
             </ColorDiv>
             <ColorDesc>{t('i18nModal.i18nLegend.thisDoesNot')}</ColorDesc>
             <ColorDiv>
-              <Grey /> - Error with bp.json.
+              <Grey /> - Error with lynx.json.
             </ColorDiv>
             <ColorDesc>
               {t('i18nModal.i18nLegend.bps')}

@@ -81,7 +81,7 @@ export default class DetailsRow extends PureComponent {
               </DetailsListItem>
               <DetailsListItem>
                 <TextLink onClick={() => toggleModal('bpJson', producer.name)}>
-                  <Bold>bp.json</Bold>
+                  <Bold>lynx.json</Bold>
                 </TextLink>
               </DetailsListItem>
             </DetailsList>

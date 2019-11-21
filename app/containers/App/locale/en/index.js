@@ -114,7 +114,7 @@ export default Object.freeze({
         content: [
           'All information comes from quering PUBLIC nodes. Block producing nodes are usually hidden',
           'LNX Network Monitor is a tool to check LNX public endpoints and show general info',
-          'It shows all registerd producers and ftech info about endpoints from bp.json file',
+          'It shows all registerd producers and ftech info about endpoints from lynx.json file',
         ],
         tps: ['TPS', 'Transaction per second'],
         aps: ['APS', 'Actions in transaction per second'],
@@ -127,7 +127,7 @@ export default Object.freeze({
         versionInformation: `Version information is obtained from querying public nodes. Block producing nodes are usually hidden. There may be legitimate reasons for "off version" public nodes, like sidestepping a known bug, but these are rare`,
         unsynced: 'Unsynced',
         thisDoesNot: `This does NOT necessarily mean there's a fork or a difference in consensus. It could be that the node is resynchronizing and will soon by synced again`,
-        bps: `BPs marked in grey have incorrect or missing bp.json file. We do a period check. Also, we're only checking the top 60`,
+        bps: `BPs marked in grey have incorrect or missing lynx.json file. We do a period check. Also, we're only checking the top 60`,
         moreinfo: 'More info',
         // Ping color explanation block
         pingColorExplanation: 'PING COLOR EXPLANATION',
@@ -167,7 +167,7 @@ export default Object.freeze({
       },
       // <BpJson />
       i18nBpJson: {
-        title: 'bp.json',
+        title: 'lynx.json',
       },
       // <ErrorMessage />
       i18nErrorMessage: {
