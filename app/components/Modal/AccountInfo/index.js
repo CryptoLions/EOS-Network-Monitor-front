@@ -166,7 +166,8 @@ export default class AccountInfo extends PureComponent {
                   <div>
                     <TextSpanBold>{t('i18nModal.i18nAccountInfo.ramUsed')}:</TextSpanBold>{' '}
                     {accountInfo.ram_usage || '--'} {t('i18nModal.i18nAccountInfo.bytes')} /{' '}
-                    {t('i18nModal.i18nAccountInfo.quota')}: {accountInfo.total_resources.ram_bytes || '--'}{' '}
+                    {t('i18nModal.i18nAccountInfo.quota')}:{' '}
+                    {(accountInfo.total_resources && accountInfo.total_resources.ram_bytes) || '--'}{' '}
                     {t('i18nModal.i18nAccountInfo.bytes')}
                   </div>
                 </DataBlock>
@@ -180,7 +181,7 @@ export default class AccountInfo extends PureComponent {
                   </div>
                   <div>
                     <TextSpanBold>{t('i18nModal.i18nAccountInfo.delegated')}:</TextSpanBold>
-                    {accountInfo.total_resources.net_weight || '--'}
+                    {(accountInfo.total_resources && accountInfo.total_resources.net_weight) || '--'}
                   </div>
                   <div>
                     <TextSpanBold>{t('i18nModal.i18nAccountInfo.current')}:</TextSpanBold>
@@ -203,7 +204,7 @@ export default class AccountInfo extends PureComponent {
                   </div>
                   <div>
                     <TextSpanBold>{t('i18nModal.i18nAccountInfo.delegated')}:</TextSpanBold>{' '}
-                    {accountInfo.total_resources.cpu_weight || '--'}
+                    {(accountInfo.total_resources && accountInfo.total_resources.cpu_weight) || '--'}
                   </div>
                   <div>
                     <TextSpanBold>{t('i18nModal.i18nAccountInfo.current')}:</TextSpanBold>{' '}
