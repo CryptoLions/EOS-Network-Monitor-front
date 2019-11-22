@@ -97,7 +97,7 @@ module.exports = options => ({
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-        API_URL: JSON.stringify(process.env.API_URL || 'http://144.76.203.177:3000'),
+        API_URL: JSON.stringify(process.env.API_URL || 'https://api.monitor.lynxchain.io'),
         VERSION_NUMBER: JSON.stringify(
           `${date.getFullYear()}.${month.substr(month.length - 2, 2)}.${day.substr(day.length - 2, 2)}`
         ),
