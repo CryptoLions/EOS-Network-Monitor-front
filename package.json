@@ -159,7 +159,7 @@
     "i18next-browser-languagedetector": "^2.2.3",
     "invariant": "2.2.4",
     "ip": "1.1.5",
-    "lodash": "4.17.10",
+    "lodash": "4.17.19",
     "minimist": "1.2.0",
     "mixin-deep": "^1.3.2",
     "moment": "^2.22.2",
