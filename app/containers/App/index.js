@@ -41,7 +41,10 @@ export default class App extends PureComponent {
   }
 
   render() {
-    const { actualBackgroundNumber } = this.props;
+    let { actualBackgroundNumber } = this.props;
+
+    actualBackgroundNumber =
+      +actualBackgroundNumber > 28 ? Math.floor(Math.random() * Math.floor(28)) : actualBackgroundNumber;
 
     return (
       <I18nextProvider i18n={i18n}>
