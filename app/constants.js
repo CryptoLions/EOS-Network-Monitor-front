@@ -13,5 +13,5 @@ export const HISTORY_ITEMS_PER_PAGE = 10;
 
 // Eos API
 export const EOS = EosApi({
-  httpEndpoint: 'https://bp.cryptolions.io',
+  httpEndpoint: 'https://intapi.eos.cryptolions.io',
 });
