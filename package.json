@@ -144,7 +144,7 @@
     "bugsnag-js": "^4.7.3",
     "bugsnag-react": "^1.1.1",
     "chalk": "^2.4.1",
-    "chart.js": "^2.7.2",
+    "chart.js": "^2.9.4",
     "compression": "1.7.3",
     "concurrently": "^3.6.1",
     "cors": "^2.8.4",
